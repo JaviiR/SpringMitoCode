@@ -64,15 +64,24 @@
         <bean id="jugador1" class="com.mitocode.beans.Jugador">
         <property name="id" value="1"></property>
         <property name="nombre" value="Mitocode"></property>
-        <property name="equipo" ref=""></property>
-        <property name="camiseta" ref=""></property>
+        <property name="equipo" ref="juventus"></property>
+        <property name="camiseta" ref="camiseta1"></property>
         </bean>
         
         
         <bean id="barcelona" class="com.mitocode.beans.Barcelona"></bean>
         <bean id="juventus" class="com.mitocode.beans.Juventus"></bean>
         
-        <bean id="camiseta" class="com.mitocode.beans.Camiseta"></bean>
+        <bean id="camiseta1" class="com.mitocode.beans.Camiseta">
+        <property name="id" value="1"></property>
+        <property name="numero" value="10"></property>
+        <property name="marca" ref="marca1"></property>
+        </bean>
+        
+        <bean id="marca1" class="com.mitocode.beans.Marca">
+        <property name="id" value="1"></property>
+        <property name="nombre" value="marca 1 OK"></property>
+        </bean>
         
         	
         </beans>

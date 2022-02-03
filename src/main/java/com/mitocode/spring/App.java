@@ -3,6 +3,7 @@ package com.mitocode.spring;
 
 
 import java.util.List;
+import java.util.Scanner;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -10,8 +11,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.mitocode.beans.AppConfig;
+import com.mitocode.beans.Barcelona;
 import com.mitocode.beans.Ciudad;
 import com.mitocode.beans.Jugador;
+import com.mitocode.beans.Juventus;
 import com.mitocode.beans.Mundo;
 import com.mitocode.beans.Persona;
 
@@ -44,12 +47,43 @@ public class App {
 		
 		
 		
-		ApplicationContext appContext=new ClassPathXmlApplicationContext("com/mitocode/xml/beans.xml"); 
+		/*ApplicationContext appContext=new ClassPathXmlApplicationContext("com/mitocode/xml/beans.xml"); 
 			Jugador jug=(Jugador) appContext.getBean("messi");
 			System.out.println(jug.getNombre()+" - "+jug.getEquipo().mostrar()+" - "+jug.getNumero());
 		
 			
 			((ConfigurableApplicationContext)appContext).close();
+		*/
+		int c=1;
+		while(c==1) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Elija un equipo: 1- Barcelona 2- Juventus 3- Salir");
+		int i=sc.nextInt();
+		ApplicationContext appContext= new ClassPathXmlApplicationContext("com/mitocode/xml/beans.xml");
+		Jugador jugador=appContext.getBean("jugador1",Jugador.class);
+		
+		switch (i) {
+		case 1:
+			jugador.setEquipo(new Barcelona());
+			System.out.println(jugador.getNombre()+"-"+jugador.getEquipo().mostrar()+"-"+jugador.getCamiseta().getNumero()+"-"+jugador.getCamiseta().getMarca().getNombre());
+			((ConfigurableApplicationContext)appContext).close();
+			break;
+		case 2:
+			jugador.setEquipo(new Juventus());
+			System.out.println(jugador.getNombre()+"-"+jugador.getEquipo().mostrar()+"-"+jugador.getCamiseta().getNumero()+"-"+jugador.getCamiseta().getMarca().getNombre());
+			((ConfigurableApplicationContext)appContext).close();
+			break;
+		case 3:
+			c=2;
+			break;
+		default:
+			break;
+		}
+		
+		
+		
+		}
+		
 		
 	}
 
