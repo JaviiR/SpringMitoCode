@@ -10,7 +10,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.mitocode.beans.AppConfig;
+import com.mitocode.spring.AppConfig;
 import com.mitocode.beans.Barcelona;
 import com.mitocode.beans.Ciudad;
 import com.mitocode.beans.Jugador;
@@ -59,7 +59,7 @@ public class App {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Elija un equipo: 1- Barcelona 2- Juventus 3- Salir");
 		int i=sc.nextInt();
-		ApplicationContext appContext= new ClassPathXmlApplicationContext("com/mitocode/xml/beans.xml");
+		ApplicationContext appContext= new AnnotationConfigApplicationContext(AppConfig.class);
 		Jugador jugador=appContext.getBean("jugador1",Jugador.class);
 		
 		switch (i) {

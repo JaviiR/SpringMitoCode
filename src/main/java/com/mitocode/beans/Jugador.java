@@ -38,7 +38,6 @@ public class Jugador {
 		return camiseta;
 	}
 	@Autowired
-	
 	public void setCamiseta(Camiseta camiseta) {
 		this.camiseta = camiseta;
 	}
