@@ -65,6 +65,7 @@ public class App {
 		switch (i) {
 		case 1:
 			jugador.setEquipo(new Barcelona());
+			
 			System.out.println(jugador.getNombre()+"-"+jugador.getEquipo().mostrar()+"-"+jugador.getCamiseta().getNumero()+"-"+jugador.getCamiseta().getMarca().getNombre());
 			((ConfigurableApplicationContext)appContext).close();
 			break;
@@ -80,7 +81,7 @@ public class App {
 			break;
 		}
 		
-		
+		System.out.println("///////////////////////////////////////////////");
 		
 		}
 		

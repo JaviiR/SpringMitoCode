@@ -1,5 +1,8 @@
 package com.mitocode.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+@Component
 public class Camiseta {
 	private int id;
     private int numero;
@@ -19,6 +22,7 @@ public class Camiseta {
 	public Marca getMarca() {
 		return marca;
 	}
+	@Autowired
 	public void setMarca(Marca marca) {
 		this.marca = marca;
 	}

@@ -2,11 +2,12 @@ package com.mitocode.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.mitocode.interfaces.IEquipo;
-@Component("messi")
+@Component
 public class Jugador {
 
 	private int id;
@@ -28,12 +29,16 @@ public class Jugador {
 	public IEquipo getEquipo() {
 		return equipo;
 	}
+	@Autowired
+	@Qualifier("barcelona")
 	public void setEquipo(IEquipo equipo) {
 		this.equipo = equipo;
 	}
 	public Camiseta getCamiseta() {
 		return camiseta;
 	}
+	@Autowired
+	
 	public void setCamiseta(Camiseta camiseta) {
 		this.camiseta = camiseta;
 	}

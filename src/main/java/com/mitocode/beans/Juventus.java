@@ -1,7 +1,9 @@
 package com.mitocode.beans;
 
-import com.mitocode.interfaces.IEquipo;
+import org.springframework.stereotype.Component;
 
+import com.mitocode.interfaces.IEquipo;
+@Component
 public class Juventus implements IEquipo{
 	@Override
 	public String mostrar() {
